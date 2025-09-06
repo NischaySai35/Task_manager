@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Bell, Moon, Sun, Settings, LogOut, User, Menu, X } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
-import { Avatar } from '../ui/Avatar';
 import { Button } from '../ui/Button';
 
 interface HeaderProps {
@@ -31,14 +30,6 @@ export const Header: React.FC<HeaderProps> = ({ onMenuToggle, showMenuButton = f
                 <Menu className="w-5 h-5" />
               </Button>
             )}
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-yellow-500 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-sm">S</span>
-              </div>
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-                SynergySphere
-              </h1>
-            </div>
           </div>
 
           {/* Right side */}
@@ -73,10 +64,8 @@ export const Header: React.FC<HeaderProps> = ({ onMenuToggle, showMenuButton = f
                 onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                 className="flex items-center space-x-3 p-1 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               >
-                <Avatar src={user?.avatar} name={user?.name} size="sm" />
-                <span className="hidden sm:block text-sm font-medium text-gray-900 dark:text-white">
-                  {user?.name}
-                </span>
+                <Settings className="w-5 h-5" />
+                <span className="font-medium">Settings</span>
               </button>
 
               {isUserMenuOpen && (

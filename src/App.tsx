@@ -57,13 +57,13 @@ const AppContent: React.FC = () => {
         onClose={() => setIsSidebarOpen(false)}
       />
       
-      <div className="flex-1 lg:ml-64">
+      <div className="flex-1">
         <Header
           onMenuToggle={() => setIsSidebarOpen(true)}
-          showMenuButton={true}
+          showMenuButton={!isSidebarOpen}
         />
         
-        <main className="p-6 lg:p-8">
+        <main className="bg-gray-100 p-4 row-start-2 col-start-2">
           {renderActiveTab()}
         </main>
       </div>
